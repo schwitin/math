@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://success.wav" type="AudioStream" id=1]
 [ext_resource path="res://fail.wav" type="AudioStream" id=2]
-[ext_resource path="res://Task.tscn" type="PackedScene" id=3]
-[ext_resource path="res://next_task.png" type="Texture" id=4]
-[ext_resource path="res://next_task_disabled.png" type="Texture" id=5]
-[ext_resource path="res://abaco.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Smile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Task.tscn" type="PackedScene" id=4]
+[ext_resource path="res://next_task.png" type="Texture" id=5]
+[ext_resource path="res://next_task_disabled.png" type="Texture" id=6]
+[ext_resource path="res://abaco.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 
@@ -16,12 +17,16 @@ script/source = "extends Node2D
 # var b = \"textvar\"
 var taskNode = null
 var nextTaskButton = null
+var smileNode = null
+var score = 10
 
 func _ready():
 	taskNode = get_node(\"margin/VBox/HBox/Task\")
+	smileNode = get_node(\"margin/VBox/HBox/Smile\")
 	nextTaskButton = get_node(\"margin/VBox/HBox/VBox/NextTaskButton\")
 	taskNode.load_tasks(\"res://tasks.txt\")
 	nextTaskButton.disabled = true
+	smileNode.set_score(score)
 	
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -32,10 +37,14 @@ func _process(delta):
 func _on_Task_answer_correct(task):
 	nextTaskButton.disabled = false
 	get_node(\"success\").play(0.0)
+	score+=1
+	smileNode.set_score(score)
 
 
 func _on_Task_answer_wrong(task):
 	get_node(\"wrong\").play(0.0)
+	score-=1
+	smileNode.set_score(score)
 
 
 func _on_next_task():
@@ -120,14 +129,16 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="Task" parent="margin/VBox/HBox" index="0" instance=ExtResource( 3 )]
+[node name="Smile" parent="margin/VBox/HBox" index="0" instance=ExtResource( 3 )]
+
+[node name="Task" parent="margin/VBox/HBox" index="1" instance=ExtResource( 4 )]
 
 margin_right = 640.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 640, 0 )
 _sections_unfolded = [ "Margin", "Rect", "Size Flags" ]
 
-[node name="VBox" type="VBoxContainer" parent="margin/VBox/HBox" index="1"]
+[node name="VBox" type="VBoxContainer" parent="margin/VBox/HBox" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,8 +175,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-texture_disabled = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_disabled = ExtResource( 6 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="MarginContainer" type="MarginContainer" parent="margin/VBox" index="1"]
@@ -186,7 +197,7 @@ size_flags_vertical = 1
 custom_constants/margin_top = 20
 _sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
 
-[node name="GridContainer" parent="margin/VBox" index="2" instance=ExtResource( 6 )]
+[node name="GridContainer" parent="margin/VBox" index="2" instance=ExtResource( 7 )]
 
 margin_top = 78.0
 margin_right = 712.0
