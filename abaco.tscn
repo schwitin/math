@@ -1,0 +1,341 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://abaco.gd" type="Script" id=1]
+[ext_resource path="res://abacus.png" type="Texture" id=2]
+[ext_resource path="res://bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://reset.png" type="Texture" id=4]
+
+[node name="abaco" type="HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 644.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Mouse", "Rect", "Size Flags" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 644.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="Background" type="TextureRect" parent="CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 644.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="Buttons" type="GridContainer" parent="CenterContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 69.0
+margin_right = 344.0
+margin_bottom = 79.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 11
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="bullet01" parent="CenterContainer/Buttons" index="0" instance=ExtResource( 3 )]
+
+margin_right = 0.0
+margin_bottom = 3.0
+
+[node name="bullet02" parent="CenterContainer/Buttons" index="1" instance=ExtResource( 3 )]
+
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 3.0
+
+[node name="bullet03" parent="CenterContainer/Buttons" index="2" instance=ExtResource( 3 )]
+
+margin_left = 8.0
+margin_right = 8.0
+margin_bottom = 3.0
+
+[node name="bullet04" parent="CenterContainer/Buttons" index="3" instance=ExtResource( 3 )]
+
+margin_left = 12.0
+margin_right = 12.0
+margin_bottom = 3.0
+
+[node name="bullet05" parent="CenterContainer/Buttons" index="4" instance=ExtResource( 3 )]
+
+margin_left = 16.0
+margin_right = 16.0
+margin_bottom = 3.0
+
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/Buttons" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 24.0
+margin_bottom = 3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="bullet06" parent="CenterContainer/Buttons" index="6" instance=ExtResource( 3 )]
+
+margin_left = 28.0
+margin_right = 28.0
+margin_bottom = 3.0
+
+[node name="bullet07" parent="CenterContainer/Buttons" index="7" instance=ExtResource( 3 )]
+
+margin_left = 32.0
+margin_right = 32.0
+margin_bottom = 3.0
+
+[node name="bullet08" parent="CenterContainer/Buttons" index="8" instance=ExtResource( 3 )]
+
+margin_left = 36.0
+margin_right = 36.0
+margin_bottom = 3.0
+
+[node name="bullet09" parent="CenterContainer/Buttons" index="9" instance=ExtResource( 3 )]
+
+margin_left = 40.0
+margin_bottom = 3.0
+
+[node name="bullet10" parent="CenterContainer/Buttons" index="10" instance=ExtResource( 3 )]
+
+margin_left = 44.0
+margin_right = 44.0
+margin_bottom = 3.0
+
+[node name="bullet11" parent="CenterContainer/Buttons" index="11" instance=ExtResource( 3 )]
+
+margin_top = 7.0
+margin_right = 0.0
+margin_bottom = 10.0
+
+[node name="bullet12" parent="CenterContainer/Buttons" index="12" instance=ExtResource( 3 )]
+
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 4.0
+margin_bottom = 10.0
+
+[node name="bullet13" parent="CenterContainer/Buttons" index="13" instance=ExtResource( 3 )]
+
+margin_left = 8.0
+margin_top = 7.0
+margin_right = 8.0
+margin_bottom = 10.0
+
+[node name="bullet14" parent="CenterContainer/Buttons" index="14" instance=ExtResource( 3 )]
+
+margin_left = 12.0
+margin_top = 7.0
+margin_right = 12.0
+margin_bottom = 10.0
+
+[node name="bullet15" parent="CenterContainer/Buttons" index="15" instance=ExtResource( 3 )]
+
+margin_left = 16.0
+margin_top = 7.0
+margin_right = 16.0
+margin_bottom = 10.0
+
+[node name="VSeparator2" type="VSeparator" parent="CenterContainer/Buttons" index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 7.0
+margin_right = 24.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="bullet16" parent="CenterContainer/Buttons" index="17" instance=ExtResource( 3 )]
+
+margin_left = 28.0
+margin_top = 7.0
+margin_right = 28.0
+margin_bottom = 10.0
+
+[node name="bullet17" parent="CenterContainer/Buttons" index="18" instance=ExtResource( 3 )]
+
+margin_left = 32.0
+margin_top = 7.0
+margin_right = 32.0
+margin_bottom = 10.0
+
+[node name="bullet18" parent="CenterContainer/Buttons" index="19" instance=ExtResource( 3 )]
+
+margin_left = 36.0
+margin_top = 7.0
+margin_right = 36.0
+margin_bottom = 10.0
+
+[node name="bullet19" parent="CenterContainer/Buttons" index="20" instance=ExtResource( 3 )]
+
+margin_left = 40.0
+margin_top = 7.0
+margin_bottom = 10.0
+
+[node name="bullet20" parent="CenterContainer/Buttons" index="21" instance=ExtResource( 3 )]
+
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 44.0
+margin_bottom = 10.0
+
+[node name="margin" type="MarginContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 648.0
+margin_right = 658.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 10
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+
+[node name="Controls" type="VBoxContainer" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 662.0
+margin_right = 712.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect", "Size Flags" ]
+
+[node name="ResetButton" type="TextureButton" parent="Controls" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Textures" ]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet01" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet02" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet03" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet04" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet05" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet06" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet07" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet08" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet09" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet10" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet11" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet12" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet13" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet14" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet15" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet16" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet17" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet18" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet19" to="." method="_on_bullet_state_changed"]
+
+[connection signal="state_changed" from="CenterContainer/Buttons/bullet20" to="." method="_on_bullet_state_changed"]
+
+[connection signal="pressed" from="Controls/ResetButton" to="." method="_on_ResetButton_pressed"]
+
+

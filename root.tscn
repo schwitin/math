@@ -1,0 +1,202 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://success.wav" type="AudioStream" id=1]
+[ext_resource path="res://fail.wav" type="AudioStream" id=2]
+[ext_resource path="res://Task.tscn" type="PackedScene" id=3]
+[ext_resource path="res://next_task.png" type="Texture" id=4]
+[ext_resource path="res://next_task_disabled.png" type="Texture" id=5]
+[ext_resource path="res://abaco.tscn" type="PackedScene" id=6]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+var taskNode = null
+var nextTaskButton = null
+
+func _ready():
+	taskNode = get_node(\"margin/VBox/HBox/Task\")
+	nextTaskButton = get_node(\"margin/VBox/HBox/VBox/NextTaskButton\")
+	taskNode.load_tasks(\"res://tasks.txt\")
+	nextTaskButton.disabled = true
+	
+func _process(delta):
+	# Called every frame. Delta is time since last frame.
+	# Update game logic here.
+	# $minion.position.x +=5
+	pass
+
+func _on_Task_answer_correct(task):
+	nextTaskButton.disabled = false
+	get_node(\"success\").play(0.0)
+
+
+func _on_Task_answer_wrong(task):
+	get_node(\"wrong\").play(0.0)
+
+
+func _on_next_task():
+	taskNode.set_next_task()
+	nextTaskButton.disabled = true
+"
+
+[node name="root" type="Node2D"]
+
+script = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="success" type="AudioStreamPlayer" parent="." index="0"]
+
+stream = ExtResource( 1 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="wrong" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="margin" type="MarginContainer" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="VBox" type="VBoxContainer" parent="margin" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 732.0
+margin_bottom = 246.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="HBox" type="HBoxContainer" parent="margin/VBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 712.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Task" parent="margin/VBox/HBox" index="0" instance=ExtResource( 3 )]
+
+margin_right = 640.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 640, 0 )
+_sections_unfolded = [ "Margin", "Rect", "Size Flags" ]
+
+[node name="VBox" type="VBoxContainer" parent="margin/VBox/HBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 644.0
+margin_right = 694.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 8
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="NextTaskButton" type="TextureButton" parent="margin/VBox/HBox/VBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="MarginContainer" type="MarginContainer" parent="margin/VBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 712.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_top = 20
+_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
+
+[node name="GridContainer" parent="margin/VBox" index="2" instance=ExtResource( 6 )]
+
+margin_top = 78.0
+margin_right = 712.0
+margin_bottom = 226.0
+size_flags_horizontal = 4
+
+[connection signal="answer_correct" from="margin/VBox/HBox/Task" to="." method="_on_Task_answer_correct"]
+
+[connection signal="answer_wrong" from="margin/VBox/HBox/Task" to="." method="_on_Task_answer_wrong"]
+
+[connection signal="pressed" from="margin/VBox/HBox/VBox/NextTaskButton" to="." method="_on_next_task"]
+
+
