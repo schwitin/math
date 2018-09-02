@@ -40,10 +40,27 @@ func set_next_task():
 		nextTaskIndex = 0
 		
 	currentTask = myTasks[nextTaskIndex]
+	_save_state(nextTaskIndex)
 	nextTaskIndex+=1
 		
 	_init_question()
 	_init_answers()
+	
+func _save_state(state):
+	var f = File.new()
+	f.open("user://math.save", File.WRITE)
+	f.store_string(String(state))
+	f.close()
+	
+func restore_state():
+	var f = File.new()
+	var result = f.open("user://math.save", File.READ)
+	if(result == ERR_FILE_NOT_FOUND):
+		nextTaskIndex = 0
+	else:
+		nextTaskIndex = int(f.get_as_text())
+	f.close()
+
 
 func _init_question():
 	for c in questionContainer.get_children():
@@ -97,12 +114,14 @@ func load_tasks(resource):
 	file.open(resource, file.READ)
 	while not file.eof_reached():
 		var taskStr = file.get_line()
-		
+		if taskStr.begins_with('#'):
+			continue
 		var task = _load_task(taskStr)
 		if task:
 			myTasks.append(task)
 		
 	file.close()
+	restore_state()
 	set_next_task()
 	
 func _load_task(taskStr):
