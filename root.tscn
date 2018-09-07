@@ -38,7 +38,18 @@ func _process(delta):
 func _on_Task_answer_correct(task):
 	nextTaskButton.disabled = false
 	get_node(\"success\").play(0.0)
-	abacoNode.set_abaco_state(int(task.operand1), int(task.operand2))
+	var operator = task.operator
+	var operand1 = int(task.operand1)
+	var operand2 = int(task.operand2)
+	var result = int(task.result)
+	
+	var blue
+	if(operator == '+'):
+		blue = operand1
+	else: # -
+		blue = operand1 - operand2
+		
+	abacoNode.set_abaco_state(blue, operand2)
 	smileNode.set_jolly()
 
 

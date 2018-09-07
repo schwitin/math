@@ -16,9 +16,10 @@ func reset():
 	get_tree().call_group("allButtons", "set_state_grey")	
 	
 func set_abaco_state(blue, red):
+	
 	var all_nodes = get_tree().get_nodes_in_group("allButtons")
-	print('blue', all_nodes.size())
- 			
+	print('blue', blue)
+	print('red', red)
 	var i = 0
 	while i < all_nodes.size():
 		if(i < blue):
