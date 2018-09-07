@@ -8,9 +8,6 @@ enum State {
 
 var current_state
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var _texture_red = null
 var _texture_blue = null
 var _texture_grey = null
@@ -25,14 +22,14 @@ func _ready():
 	texture_normal = _texture_grey
 	current_state = State.GREY
 	
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	
 	pass
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
 func _pressed():
 	match current_state:
 		State.GREY:

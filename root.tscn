@@ -18,10 +18,12 @@ script/source = "extends Node2D
 var taskNode = null
 var nextTaskButton = null
 var smileNode = null
+var abacoNode = null
 
 func _ready():
 	taskNode = get_node(\"margin/VBox/HBox/Task\")
 	smileNode = get_node(\"margin/VBox/HBox/Smile\")
+	abacoNode = get_node(\"margin/VBox/Abaco\")
 	nextTaskButton = get_node(\"margin/VBox/HBox/VBox/NextTaskButton\")
 	taskNode.load_tasks(\"res://tasks.txt\")
 	nextTaskButton.disabled = true
@@ -36,6 +38,7 @@ func _process(delta):
 func _on_Task_answer_correct(task):
 	nextTaskButton.disabled = false
 	get_node(\"success\").play(0.0)
+	abacoNode.set_abaco_state(int(task.operand1), int(task.operand2))
 	smileNode.set_jolly()
 
 
@@ -47,6 +50,7 @@ func _on_Task_answer_wrong(task):
 func _on_next_task():
 	taskNode.set_next_task()
 	nextTaskButton.disabled = true
+	abacoNode.reset()
 "
 
 [node name="root" type="Node2D" index="0"]
@@ -111,6 +115,7 @@ _sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="HBox" type="HBoxContainer" parent="margin/VBox" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -194,7 +199,7 @@ size_flags_vertical = 1
 custom_constants/margin_top = 20
 _sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
 
-[node name="GridContainer" parent="margin/VBox" index="2" instance=ExtResource( 7 )]
+[node name="Abaco" parent="margin/VBox" index="2" instance=ExtResource( 7 )]
 
 margin_top = 78.0
 margin_right = 712.0

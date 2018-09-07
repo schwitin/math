@@ -10,11 +10,27 @@ func _ready():
 			c.add_to_group("allButtons")
 			# c.connect("state_changed", self, "_on_Button_state_changed")
 			# c.connect("data_recived", self, "_on_data_recived")
-			
+	set_abaco_state(10,5)
 
 func _on_ResetButton_pressed():
-	get_tree().call_group("allButtons", "set_state_grey")
-
+	reset()
+	set_abaco_state(10,5)
+	
+func reset():
+	get_tree().call_group("allButtons", "set_state_grey")	
+	
+func set_abaco_state(blue, red):
+	var all_nodes = get_tree().get_nodes_in_group("allButtons")
+	print('blue', all_nodes.size())
+ 			
+	var i = 0
+	while i < all_nodes.size():
+		if(i < blue):
+			all_nodes[i].set_state_blue()
+		else : if (i < blue + red):
+			all_nodes[i].set_state_red()
+		
+		i+=1
 
 func _on_bullet_state_changed(source, state):
 	var left_bullet = null
@@ -33,12 +49,12 @@ func _on_bullet_state_changed(source, state):
 
 	
 	if(left_bullet && left_bullet.current_state == left_bullet.State.GREY):
-		#print("left is grey")
+		print("left is grey")
 		source.set_state_grey()
 		return	
 		
 	if(right_bullet && right_bullet.current_state == right_bullet.State.BLUE):
-		#print("rigt is blue")
+		print("rigt is blue")
 		source.set_state_blue()
 		return
 	
@@ -46,7 +62,7 @@ func _on_bullet_state_changed(source, state):
 			&& left_bullet.current_state == left_bullet.State.BLUE 
 			&& right_bullet 
 			&& right_bullet.current_state == right_bullet.State.BLUE):
-		#print("nb is blue")
+		print("nb is blue")
 		source.set_state_blue()
 		return
 	
@@ -54,20 +70,20 @@ func _on_bullet_state_changed(source, state):
 			&& left_bullet.current_state == left_bullet.State.RED 
 			&& right_bullet 
 			&& right_bullet.current_state == right_bullet.State.RED):
-		#print("nb is red")
+		print("nb is red")
 		source.set_state_red()
 		return
 		
 	if(right_bullet && right_bullet.current_state == right_bullet.State.RED
 			&& state == source.State.GREY):
-		#print("right is red, wont grey")
+		print("right is red, wont grey")
 		source.set_state_blue()
 		return
 	
 	if(left_bullet 
 			&& left_bullet.current_state == left_bullet.State.RED 
 			&& state == source.State.BLUE):
-		#print("left is red, wont blue")
+		print("left is red, wont blue")
 		source.set_state_red()
 		return
 		
