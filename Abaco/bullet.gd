@@ -50,6 +50,7 @@ func _set_state(state):
 			texture_normal = _texture_red
 			
 	emit_signal("state_changed", self, current_state)
+	_play_sound()
 
 func set_state_grey():
 	current_state = State.GREY
@@ -62,6 +63,15 @@ func set_state_red():
 func set_state_blue():
 	current_state = State.BLUE
 	texture_normal = _texture_blue
+	
+func _play_sound():
+	match current_state:
+		State.GREY:			
+			get_node("sound_grey").play(0.0)
+		State.BLUE:
+			get_node("sound_blue").play(0.0)
+		State.RED:
+			get_node("sound_red").play(0.0)
 	
 	
 	

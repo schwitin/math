@@ -53,9 +53,6 @@ func _on_Task_answer_correct(task):
 			blue = operand1 - operand2
 			red = operand2
 			
-	print(blue)
-	print(red)
-		
 	abacoNode.set_abaco_state(blue, red)
 	smileNode.set_jolly()
 

@@ -82,3 +82,8 @@ func _on_bullet_state_changed(source, state):
 		source.set_state_red()
 		return
 		
+	
+	
+		
+	
+		

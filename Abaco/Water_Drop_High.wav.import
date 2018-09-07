@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Water_Drop_High.wav-c9587e74fb4865bc9ff28314916da4c8.sample"
+
+[deps]
+
+source_file="res://Abaco/Water_Drop_High.wav"
+dest_files=[ "res://.import/Water_Drop_High.wav-c9587e74fb4865bc9ff28314916da4c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
