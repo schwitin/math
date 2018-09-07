@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Task/Task.gd" type="Script" id=1]
 
-
 [node name="Task" type="MarginContainer"]
 
 anchor_left = 0.0

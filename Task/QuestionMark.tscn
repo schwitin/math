@@ -3,9 +3,7 @@
 [ext_resource path="res://Font/liberation_sans_big.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Task/QuestionMark.gd" type="Script" id=2]
 
-
-
-[node name="QuestionMark" type="Button"]
+[node name="QuestionMark" type="Button" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

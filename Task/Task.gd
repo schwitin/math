@@ -76,13 +76,18 @@ func _init_question():
 func _init_answers():
 	for c in answersContainer.get_children():
 		answersContainer.remove_child(c)	
-	
+		
 	var answers = Array(currentTask.answers).duplicate()
 	while answers.size() > 0:
 		var idx = randi() % answers.size()
 		var answer = answers[idx]
 		answersContainer.add_child(_create_node_from_scene(answer, sceneAnswer))
 		answers.remove(idx)
+
+func _disable_answers():
+	for c in answersContainer.get_children():
+		c.disabled = true	
+	 
 
 func _create_node(text):
 	
@@ -95,6 +100,8 @@ func _create_node(text):
 func _on_answered(answer):	
 	if(answer == currentTask.correctAnswer):
 		questionMarkNode.text = answer
+		questionMarkNode.disable_drop()
+		_disable_answers()
 		emit_signal("answer_correct", currentTask)
 	else: 
 		emit_signal("answer_wrong", currentTask)
