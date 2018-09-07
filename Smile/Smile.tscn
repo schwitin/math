@@ -2,9 +2,11 @@
 
 [ext_resource path="res://Smile/Smile.gd" type="Script" id=1]
 
+[node name="Smile" type="Sprite"]
 
-[node name="Smile" type="Node2D"]
-
+position = Vector2( 75, 75 )
+rotation = 0.00174533
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 
