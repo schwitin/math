@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/abacus.png-e7c5901b314280e9cbe760523680668c.stex"
+path="res://.import/reset.png-67ee175fb469de06813dafaf0a0f7593.stex"
 
 [deps]
 
-source_file="res://abacus.png"
-dest_files=[ "res://.import/abacus.png-e7c5901b314280e9cbe760523680668c.stex" ]
+source_file="res://Abaco/reset.png"
+dest_files=[ "res://.import/reset.png-67ee175fb469de06813dafaf0a0f7593.stex" ]
 
 [params]
 

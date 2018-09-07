@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sphere_red.png-3d04dff908edd3ee46c69f9017569f09.stex"
+path="res://.import/abacus.png-300ef8918f6a940690c51d7acf9b7066.stex"
 
 [deps]
 
-source_file="res://sphere_red.png"
-dest_files=[ "res://.import/sphere_red.png-3d04dff908edd3ee46c69f9017569f09.stex" ]
+source_file="res://Abaco/abacus.png"
+dest_files=[ "res://.import/abacus.png-300ef8918f6a940690c51d7acf9b7066.stex" ]
 
 [params]
 

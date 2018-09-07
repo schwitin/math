@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/next_task.png-2c96672f0e5a9e7b21b690d17b06d7fe.stex"
+path="res://.import/next_task_disabled.png-7a80e07bdfbbff6fee95f543cce9a4fd.stex"
 
 [deps]
 
-source_file="res://next_task.png"
-dest_files=[ "res://.import/next_task.png-2c96672f0e5a9e7b21b690d17b06d7fe.stex" ]
+source_file="res://Task/next_task_disabled.png"
+dest_files=[ "res://.import/next_task_disabled.png-7a80e07bdfbbff6fee95f543cce9a4fd.stex" ]
 
 [params]
 

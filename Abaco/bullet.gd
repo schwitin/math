@@ -18,9 +18,9 @@ var _texture_grey = null
 signal state_changed(source, state)
 
 func _ready():
-	_texture_red = preload("res://sphere_red.png")
-	_texture_blue = preload("res://sphere.png")
-	_texture_grey = preload("res://sphere_grey.png")
+	_texture_red = preload("res://Abaco/sphere_red.png")
+	_texture_blue = preload("res://Abaco/sphere.png")
+	_texture_grey = preload("res://Abaco/sphere_grey.png")
 	
 	texture_normal = _texture_grey
 	current_state = State.GREY

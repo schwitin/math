@@ -27,9 +27,9 @@ func _init():
 	regexAntipattern.compile(TASK_ANTIPATTERN)
 
 func _ready():
-	sceneLabel = preload("res://Label.tscn")
-	sceneQuestionMark = preload("res://QuestionMark.tscn")
-	sceneAnswer = preload("res://Answer.tscn")
+	sceneLabel = preload("res://Task/Label.tscn")
+	sceneQuestionMark = preload("res://Task/QuestionMark.tscn")
+	sceneAnswer = preload("res://Task/Answer.tscn")
 	questionContainer = get_node("VBox/Question")
 	answersContainer = get_node("VBox/Answers")
 	get_node("VBox/Answers").add_constant_override("separation", 20)

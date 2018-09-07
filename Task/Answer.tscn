@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://liberation_sans_big.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Answer.gd" type="Script" id=2]
+[ext_resource path="res://Task/Answer.gd" type="Script" id=2]
+
 
 [node name="Answer" type="Button" index="0"]
 

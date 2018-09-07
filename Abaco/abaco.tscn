@@ -1,9 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://abaco.gd" type="Script" id=1]
-[ext_resource path="res://abacus.png" type="Texture" id=2]
-[ext_resource path="res://bullet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://reset.png" type="Texture" id=4]
+[ext_resource path="res://Abaco/abaco.gd" type="Script" id=1]
+[ext_resource path="res://Abaco/abacus.png" type="Texture" id=2]
+[ext_resource path="res://Abaco/bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Abaco/reset.png" type="Texture" id=4]
+
+
+
+
 
 [node name="abaco" type="HBoxContainer" index="0"]
 

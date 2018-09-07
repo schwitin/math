@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/next_task_disabled.png-579502c03a25f58faf5dc122345b157e.stex"
+path="res://.import/sphere_grey.png-6d49b1ba78f30ec02714a0769ba8daaa.stex"
 
 [deps]
 
-source_file="res://next_task_disabled.png"
-dest_files=[ "res://.import/next_task_disabled.png-579502c03a25f58faf5dc122345b157e.stex" ]
+source_file="res://Abaco/sphere_grey.png"
+dest_files=[ "res://.import/sphere_grey.png-6d49b1ba78f30ec02714a0769ba8daaa.stex" ]
 
 [params]
 

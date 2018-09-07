@@ -2,11 +2,11 @@
 
 [ext_resource path="res://success.wav" type="AudioStream" id=1]
 [ext_resource path="res://fail.wav" type="AudioStream" id=2]
-[ext_resource path="res://Smile.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Task.tscn" type="PackedScene" id=4]
-[ext_resource path="res://next_task.png" type="Texture" id=5]
-[ext_resource path="res://next_task_disabled.png" type="Texture" id=6]
-[ext_resource path="res://abaco.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Smile/Smile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Task/Task.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Task/next_task.png" type="Texture" id=5]
+[ext_resource path="res://Task/next_task_disabled.png" type="Texture" id=6]
+[ext_resource path="res://Abaco/abaco.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 
