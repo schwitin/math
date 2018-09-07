@@ -16,7 +16,6 @@ func reset():
 	get_tree().call_group("allButtons", "set_state_grey")	
 	
 func set_abaco_state(blue, red):
-	
 	var all_nodes = get_tree().get_nodes_in_group("allButtons")
 	var i = 0
 	while i < all_nodes.size():
@@ -24,7 +23,8 @@ func set_abaco_state(blue, red):
 			all_nodes[i].set_state_blue()
 		else : if (i < blue + red):
 			all_nodes[i].set_state_red()
-		
+		else:
+			all_nodes[i].set_state_grey()
 		i+=1
 
 func _on_bullet_state_changed(source, state):
