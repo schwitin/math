@@ -8,13 +8,9 @@ func _ready():
 	for c in get_node(PATH_BUTTON_CONTAINER).get_children():
 		if c.get_class() == "TextureButton" : 
 			c.add_to_group("allButtons")
-			# c.connect("state_changed", self, "_on_Button_state_changed")
-			# c.connect("data_recived", self, "_on_data_recived")
-	set_abaco_state(10,5)
 
 func _on_ResetButton_pressed():
 	reset()
-	set_abaco_state(10,5)
 	
 func reset():
 	get_tree().call_group("allButtons", "set_state_grey")	
