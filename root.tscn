@@ -25,7 +25,7 @@ func _ready():
 	smileNode = get_node(\"margin/VBox/HBox/Smile\")
 	abacoNode = get_node(\"margin/VBox/Abaco\")
 	nextTaskButton = get_node(\"margin/VBox/HBox/VBox/NextTaskButton\")
-	taskNode.load_tasks(\"res://tasks.txt\")
+	# taskNode.load_tasks(\"res://tasks.txt\")
 	nextTaskButton.disabled = true
 	smileNode.set_jolly()
 	
@@ -68,7 +68,7 @@ func _on_next_task():
 	abacoNode.reset()
 "
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]

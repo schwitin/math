@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Math"
+config/name="MathOwlet"
 run/main_scene="res://root.tscn"
 config/icon="res://icon.png"
 
