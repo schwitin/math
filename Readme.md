@@ -9,3 +9,6 @@ MathOwlet is an app for the youngest mathematicians, where they can learn additi
 - The correct answer is synchronized with the Abacus
 - Over 1000 unique tasks
 - No adds, no in-app purchases
+
+## Screenshot
+![MathOwlet](https://github.com/schwitin/math/icon-512x512.jpg)
