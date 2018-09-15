@@ -11,4 +11,4 @@ MathOwlet is an app for the youngest mathematicians, where they can learn additi
 - No adds, no in-app purchases
 
 ## Screenshot
-![MathOwlet](https://github.com/schwitin/math/icon-512x512.jpg)
+![MathOwlet](https://github.com/schwitin/math/blob/master/screenshot1.jpg)
